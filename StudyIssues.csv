@@ -1,0 +1,239 @@
+Tool,PR Link,Root cause,Symptom,Fix Strategy
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/9942,Improper AST Traversal,False negative,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/8739,Improper AST Traversal,False negative,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/8740,Improper AST Traversal,False negative,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/1259,Improper AST Traversal,False negative,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/4217,Improper AST Traversal,False negative,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/commit/553af5f4c777d513e7ce570dc32cf6d27654e9c4,Improper AST Traversal,False negative,Fix value check
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/6803,Improper AST Traversal,False negative,Redesign rule checker pattern
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/6840,Improper AST Traversal,False negative,Fix annotation filter
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/6444,Improper AST Traversal,False negative,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/7039,Improper AST Traversal,False negative,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/11827,Improper AST Traversal,False positive,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/10967,Improper AST Traversal,False positive,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/10093,Improper AST Traversal,False positive,Fix value check
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/6640,Improper AST Traversal,False positive,Redesign rule checker pattern
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/111,Improper AST Traversal,False positive,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/commit/f0c6c6ad7c33dc8af5a46c6ae2ecdff24f13a70b,Improper AST Traversal,False positive,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/commit/eef13e8c5ee6922af938d9eef3d73799ce71798b,Improper AST Traversal,False positive,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/1485,Improper AST Traversal,False positive,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/commit/7b74f65b1048400bd37b2e897811e1591929da0a,Unrecognized Equivalent Annotation,False positive,Fix value check
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/2909,Improper AST Traversal,False positive,Fix annotation filter
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/1053,Improper AST Traversal,False positive,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/2674,Improper AST Traversal,False positive,Fix value check
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/2674,Improper AST Traversal,False positive,Fix value check
+CheckStyle,https://github.com/checkstyle/checkstyle/commit/9130eceb98d2c58c90e6cd6aa318017dd20cbd25,Improper AST Traversal,False positive,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/commit/9aa49c8f6d2b30577565f87984819e1df0d62d0f,Inaccurate String Matching,False positive,Others
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/2142,Improper AST Traversal,False positive,Fix value check
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/3269,Improper AST Traversal,False positive,Fix value check
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/5076,Improper AST Traversal,False positive,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/3243,Incorrect AST generation,False positive,Fix grammar issue
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/3244,Incorrect AST generation,False positive,Fix grammar issue
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/3842,Improper AST Traversal,False positive,Fix Incorrect Type Operatio
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/3737,Improper AST Traversal,False positive,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/4902,Improper AST Traversal,False positive,Fix annotation filter
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/5311,Improper AST Traversal,False positive,Fix value check
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/8083,Improper AST Traversal,False positive,Fix Incorrect Type Operatio
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/6539,Improper AST Traversal,False positive,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/10601,Misprocessing of Configuration File,Runtime crash,Others
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/10435,Incorrect AST generation,Runtime crash,Fix grammar issue
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/7772,Improper AST Traversal,Runtime crash,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/9265,Improper AST Traversal,Runtime crash,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/commit/e3c089a4cde5e1074dfec8801727de1e3395a2ef,Improper AST Traversal,Runtime crash,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/2891,Incorrect AST generation,Runtime crash,Fix grammar issue
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/2891,Incorrect AST generation,Runtime crash,Fix grammar issue
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/2891,Incorrect AST generation,Runtime crash,Fix grammar issue
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/7407,Incorrect AST generation,Runtime crash,Fix grammar issue
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/7407,Incorrect AST generation,Runtime crash,Fix grammar issue
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/7407,Incorrect AST generation,Runtime crash,Fix grammar issue
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/3734,Improper AST Traversal,Runtime crash,Fix value check
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/4595,Improper AST Traversal,Runtime crash,Fix value check
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/5252,Improper AST Traversal,Runtime crash,Fix AST node retrieval
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/8736,Incorrect AST generation,Wrong intermediate result,Fix grammar issue
+CheckStyle,https://github.com/checkstyle/checkstyle/pull/5328,Improper AST Traversal,Wrong intermediate result,Fix AST node retrieval
+Infer,https://github.com/facebook/infer/commit/56872d8126dbaa60e463612655b2bc8965b1288a,Misprocessing of Configuration File,False negative,Others
+Infer,https://github.com/facebook/infer/commit/f6cb99fc551c982444baebb95cab0027d0c8c301,Incomplete Semantics,False positive,Others
+Infer,https://github.com/facebook/infer/commit/f6cb99fc551c982444baebb95cab0027d0c8c301,Incomplete Semantics,False positive,Others
+Infer,https://github.com/facebook/infer/commit/7821266c8feec03b7edf157d474e6a5ec364499f,Incomplete Semantics,False positive,Others
+Infer,https://github.com/facebook/infer/commit/f6cb99fc551c982444baebb95cab0027d0c8c301,Incomplete Semantics,False positive,Fix value check
+Infer,https://github.com/facebook/infer/commit/715f6ffa7ee65bdf3ad4d9c63c7b640384c1ea2f,Inaccurate String Matching,False positive,Fix Incorrect Type Operatio
+PMD,https://github.com/pmd/pmd/pull/3065,Misprocessing of Configuration File,False negative,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/1958,Misprocessing of Configuration File,False negative,Fix Incorrect Type Operatio
+PMD,https://github.com/pmd/pmd/pull/2047,Improper AST Traversal,False negative,Fix Incorrect Type Operatio
+PMD,https://github.com/pmd/pmd/pull/249,Improper AST Traversal,False negative,Fix Incorrect Type Operatio
+PMD,https://github.com/pmd/pmd/pull/249,Improper AST Traversal,False negative,Fix Incorrect Type Operatio
+PMD,https://github.com/pmd/pmd/pull/249,Improper AST Traversal,False negative,Fix Incorrect Type Operatio
+PMD,https://github.com/pmd/pmd/commit/3d08dbb48087c93c993dd1ea4367b617718b1ee5,Incomplete Semantics,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/1771,Others,False negative,Redesign rule checker pattern
+PMD,https://github.com/pmd/pmd/pull/3964,Incomplete Semantics,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/4003,Incomplete Semantics,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/4018,Incomplete Semantics,False positive,Redesign rule checker pattern
+PMD,https://github.com/pmd/pmd/pull/3197,Incomplete Semantics,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/1111,Inaccurate String Matching,False positive,Fix Incorrect Type Operatio
+PMD,https://github.com/pmd/pmd/pull/1111,Inaccurate String Matching,False positive,Fix Incorrect Type Operatio
+PMD,https://github.com/pmd/pmd/pull/3157,Erroneous Type Operation,False positive,Fix Incorrect Type Operatio
+PMD,https://github.com/pmd/pmd/pull/4018,Incomplete Semantics,False positive,Redesign rule checker pattern
+PMD,https://github.com/pmd/pmd/pull/4018,Incomplete Semantics,False positive,Redesign rule checker pattern
+PMD,https://github.com/pmd/pmd/pull/4018,Incomplete Semantics,False positive,Redesign rule checker pattern
+PMD,https://github.com/pmd/pmd/pull/220,Improper AST Traversal,False positive,Fix Incorrect Type Operatio
+PMD,https://github.com/pmd/pmd/pull/581,Incomplete Semantics,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/2777,Improper AST Traversal,False positive,Fix Incorrect Type Operatio
+PMD,https://github.com/oowekyala/pmd/commit/3b48ef6407c5a30cf8f909a2a63408494e6d8548,"Improper AST Traversal",False positive,Fix AST node retrieval
+PMD,https://github.com/pmd/pmd/pull/1155,Incomplete Semantics,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/1017,Improper AST Traversal,False positive,Fix Incorrect Type Operatio
+PMD,https://github.com/pmd/pmd/commit/8b279fac252f213426f5606c32195ddf7c8aeb67,Incomplete Semantics,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/1256,Incomplete Semantics,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/1623,Incomplete Semantics,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/1374,Misprocessing of Configuration File,False positive,Fix Incorrect Type Operatio
+PMD,https://github.com/pmd/pmd/pull/1640,Improper AST Traversal,False positive,Fix AST node retrieval
+PMD,https://github.com/pmd/pmd/pull/1010,Incomplete Semantics,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/1916,Incomplete Semantics,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/1792,Incomplete Semantics,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/2099,Erroneous Type Operation,False positive,Fix Incorrect Type Operatio
+PMD,https://github.com/pmd/pmd/pull/2674,Incomplete Semantics,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/3064,Misprocessing of Configuration File,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/4002,Incomplete Semantics,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/4002,Incomplete Semantics,False positive,Fix annotation filter
+PMD,https://github.com/pmd/pmd/pull/1843,Incorrect AST generation,Runtime crash,Fix grammar issue
+PMD,https://github.com/pmd/pmd/pull/1759,Incorrect AST generation,Runtime crash,Fix grammar issue
+PMD,https://github.com/pmd/pmd/pull/211,Incorrect AST generation,Runtime crash,Fix grammar issue
+PMD,https://github.com/Monits/pmd/commit/c95f17d85166fc375c6dc32686ba6e9d7f5873f8,Incorrect AST generation,Runtime crash,Fix grammar issue
+PMD,https://github.com/pmd/pmd/pull/416,Incorrect AST generation,Runtime crash,Fix grammar issue
+PMD,https://github.com/pmd/pmd/pull/416,Incorrect AST generation,Runtime crash,Fix grammar issue
+PMD,https://github.com/pmd/pmd/pull/416,Incorrect AST generation,Runtime crash,Fix grammar issue
+PMD,https://github.com/pmd/pmd/pull/1388,Erroneous Type Operation,Runtime crash,Fix Incorrect Type Operatio
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3221,Unrecognized Equivalent Annotation,False negative,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3298,Unrecognized Equivalent Annotation,False negative,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3275,Unrecognized Equivalent Annotation,False negative,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3129,Unrecognized Equivalent Annotation,False negative,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/pull/738,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1070,Improper AST Traversal,False negative,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1872,Unrecognized Equivalent Annotation,False negative,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1870,Improper AST Traversal,False negative,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1827,Improper AST Traversal,False negative,Fix AST node retrieval
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2070,Unrecognized Equivalent Annotation,False negative,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2252,Unrecognized Equivalent Annotation,False negative,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3305,Improper AST Traversal,False negative,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2186,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1999,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3099,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2596,Unrecognized Equivalent Annotation,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3230,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3541,Improper AST Traversal,False positive,Fix AST node retrieval
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3559,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3273,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2235,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2875,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3441,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3561,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2685,Improper AST Traversal,False positive,Fix Incorrect Type Operatio
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3912,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2168,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1336,Incorrect AST generation,False positive,Fix Incorrect Type Operatio
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1336,Erroneous Type Operation,False positive,Fix Incorrect Type Operatio
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1336,Improper AST Traversal,False positive,Fix Incorrect Type Operatio
+SonarQube,https://github.com/SonarSource/sonar-java/pull/684,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/332,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/838,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/332,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/332,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/328,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/177,Improper AST Traversal,False positive,Fix value check
+SonarQube,https://github.com/SonarSource/sonar-java/commit/bc6fd3571a0819327d401812ebbadb8d82c88a0e,Erroneous Type Operation,False positive,Fix Incorrect Type Operatio
+SonarQube,https://github.com/SonarSource/sonar-java/pull/130,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/618,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/532,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/135,Erroneous Type Operation,False positive,Fix Incorrect Type Operatio
+SonarQube,https://github.com/SonarSource/sonar-java/pull/533,Incomplete Semantics,False positive,Fix value check
+SonarQube,https://github.com/SonarSource/sonar-java/pull/638,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/484,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/4203,Improper AST Traversal,False positive,Fix AST node retrieval
+SonarQube,https://github.com/SonarSource/sonar-java/pull/4024,Misprocessing of Configuration File,False positive,Fix Incorrect Type Operatio
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3953,"Erroneous Type Operation",False positive,Fix Incorrect Type Operatio
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3795,Misprocessing of Configuration File,False positive,Redesign rule checker pattern
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3471,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3373,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2928,Incomplete Semantics,False positive,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2937,Unrecognized Equivalent Annotation,False positive,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2897,Incomplete Semantics,False positive,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2892,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2893,Incomplete Semantics,False positive,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1326,Improper AST Traversal,False positive,Fix value check
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2186,Unrecognized Equivalent Annotation,False positive,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/commit/b2afe6dcc9d40ca6c70927abef7589b798871b31,Incomplete Semantics,False positive,Fix value check
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3315,Incomplete Semantics,False positive,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3156,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2688,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2231,Improper AST Traversal,False positive,Fix AST node retrieval
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2211,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2209,Unrecognized Equivalent Annotation,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2207,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2088,Unrecognized Equivalent Annotation,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/36,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/257,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/298,Improper AST Traversal,False positive,Fix AST node retrieval
+SonarQube,https://github.com/SonarSource/sonar-java/pull/391,Unrecognized Equivalent Annotation,False positive,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3909,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/896,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/773,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/625,"Erroneous Type Operation",False positive,Fix Incorrect Type Operatio
+SonarQube,https://github.com/SonarSource/sonar-java/pull/561,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1097,"Incomplete Semantics",False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/943,"Incomplete Semantics",False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1160,Unrecognized Equivalent Annotation,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1114,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1347,Improper AST Traversal,False positive,Fix AST node retrieval
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1366,Unrecognized Equivalent Annotation,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1866,"Incomplete Semantics",False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1865,Unrecognized Equivalent Annotation,False positive,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1574,"Incomplete Semantics",False positive,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1531,Improper AST Traversal,False negative,Redesign rule checker pattern
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1525,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1465,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1480,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1444,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1382,Improper AST Traversal,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2277,Improper AST Traversal,False positive,Fix Incorrect Type Operatio
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1376,Improper AST Traversal,False positive,Fix AST node retrieval
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2195,Incomplete Semantics,False positive,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2078,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2027,Incomplete Semantics,False positive,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2631,Incomplete Semantics,False positive,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2623,Incomplete Semantics,False positive,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3167,Erroneous Type Operation,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2544,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2216,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2211,Incomplete Semantics,False positive,"Fix annotation filter"
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2209,Unrecognized Equivalent Annotation,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2676,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3287,Improper AST Traversal,False positive,Redesign rule checker pattern
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3353,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3541,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3559,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3562,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/4165,Incomplete Semantics,False positive,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2978,Erroneous Type Operation,Runtime crash,Fix Incorrect Type Operatio
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2557,Others,Runtime crash,Fix value check
+SonarQube,https://github.com/SonarSource/sonar-java/pull/541,Improper AST Traversal,Runtime crash,Fix AST node retrieval
+SonarQube,https://github.com/SonarSource/sonar-java/pull/792,Improper AST Traversal,Runtime crash,Fix value check
+SonarQube,https://github.com/SonarSource/sonar-java/pull/233,Erroneous Type Operation,Runtime crash,Fix AST node retrieval
+SonarQube,https://github.com/SonarSource/sonar-java/pull/458,Erroneous Type Operation,Runtime crash,Fix value check
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1902,Erroneous Type Operation,Runtime crash,Fix value check
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2635,Incorrect AST generation,Wrong intermediate result,Fix grammar issue
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2445,Erroneous Type Operation,Wrong intermediate result,Fix Incorrect Type Operatio
+SonarQube,https://github.com/SonarSource/sonar-java/pull/312,Incorrect AST generation,Wrong intermediate result,Fix grammar issue
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1049,Improper AST Traversal,Wrong intermediate result,Fix Incorrect Type Operatio
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2117,Improper AST Traversal,Wrong intermediate result,Fix value check
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1875,Unrecognized Equivalent Annotation,Wrong intermediate result,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/1887,Unrecognized Equivalent Annotation,Wrong intermediate result,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2257,Unrecognized Equivalent Annotation,Wrong intermediate result,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/2751,Improper AST Traversal,Wrong intermediate result,Fix Incorrect Type Operatio
+SonarQube,https://github.com/SonarSource/sonar-java/pull/3221,Unrecognized Equivalent Annotation,Wrong intermediate result,Fix annotation filter
+SonarQube,https://github.com/SonarSource/sonar-java/pull/312,Incorrect AST generation,False positive,Fix grammar issue
+Spotbugs,https://github.com/spotbugs/spotbugs/pull/434,Erroneous Type Operation,False negative,Fix Incorrect Type Operatio
+Spotbugs,https://github.com/spotbugs/spotbugs/pull/1222,Erroneous Type Operation,False negative,Fix value check
+Spotbugs,https://github.com/spotbugs/spotbugs/pull/21,Erroneous Type Operation,False negative,Fix Incorrect Type Operatio
+Spotbugs,https://github.com/spotbugs/spotbugs/commit/9d3dc848a011e6505e9ca0074855ebd5d83f4069,Incomplete Semantics,False positive,Fix annotation filter
+Spotbugs,https://github.com/spotbugs/spotbugs/commit/e0e189519404bc27fd039d74be50edbc0655ad8c,Incomplete Semantics,False positive,Fix annotation filter
+Spotbugs,https://github.com/spotbugs/spotbugs/pull/539,Incomplete Semantics,False positive,Fix annotation filter
+Spotbugs,https://github.com/spotbugs/spotbugs/pull/538,Incomplete Semantics,False positive,Fix annotation filter

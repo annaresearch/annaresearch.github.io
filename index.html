@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="jemdoc.css" type="text/css" />
+    <title>AnnaStudy</title>
+</head>
+
+<body>
+    <table summary="Table for page layout." id="tlayout">
+        <td id="layout-menu">
+            <nav class="navigation">
+                <ul class="navigation-list">
+                    <p class="navigation-item">
+                        <a class="navigation-link" href="#issues" data-popover>Analyzed issues</a>
+                    </p>
+                    <p class="navigation-item">
+                        <a class="navigation-link" href="#defects" data-popover>Defects found</a>
+                    </p>
+                    <p class="navigation-item">
+                        <a class="navigation-link" href="#code" data-popover>Code</a>
+                    </p>
+                </ul>
+            </nav>
+        </td>
+        <td id="layout-content">
+            <div id="toptitle">
+                <h1>AnnaStudy</h1>
+            </div>
+            <table class="imgtable">
+                <tr>
+                    <td align="left">
+                        We conduct the first comprehensive study of annotation-induced faults on static analyzers. In this work, we collect 238 issues from five popular and analyze their root causes, symptoms, and fix strategies. We also implement a metamorphic testing framework
+                        AnnaTester to detect usual annotation-induced faults based on our findings. AnnaTester identified 33 faults, 15 of which have been fixed.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <h2 id="issues">Analyzed issues</h2>
+            <ul>
+                <p>
+                    We have analyzed 238 issues from five static analyzers: PMD, SpotBugs, SonarQube, Infer, CheckStyle. The issue data can be available via the following line: <a href="https://github.com/annaresearch/annaresearch.github.io/blob/main/StudyIssues.csv">[Link]</a>
+                </p>
+            </ul>
+            <h2 id="defects">Defects found</h2>
+            <table>
+                <tr>
+                    <th>Annotation</th>
+                    <th>Link</th>
+                    <th>Status</th>
+                    <th>Rule</th>
+                </tr>
+                </tr>
+                <tr>
+                    <td>NoSemanticsAnnotation</td>
+                    <td><a href="https://github.com/checkstyle/checkstyle/issues/12769">Link</a></td>
+                    <td>Pending</td>
+                    <td>OneStatementPerLine</td>
+                </tr>
+                <tr>
+                    <td>SpyBean</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4037">Link</a></td>
+                    <td>Fixed</td>
+                    <td>UnusedPrivateField</td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4047">Link</a></td>
+                    <td>Pending</td>
+                    <td>ClassWithOnlyPrivateConstructorsShouldBeFinal</td>
+                </tr>
+                <tr>
+                    <td>NoSemanticsAnnotation</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4152">Link</a></td>
+                    <td>Fixed</td>
+                    <td>Crash</td>
+                </tr>
+                <tr>
+                    <td>NoSemanticsAnnotation</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4152#issue-1405484845">Link</a></td>
+                    <td>Fixed</td>
+                    <td>Crash</td>
+                </tr>
+                <tr>
+                    <td>NoSemanticsAnnotation</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4152#issuecomment-1277447394">Link</a></td>
+                    <td>Fixed</td>
+                    <td>Crash</td>
+                </tr>
+                <tr>
+                    <td>NoArgsConstructor</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4188">Link</a></td>
+                    <td>Fixed</td>
+                    <td>ClassWithOnlyPrivateConstructorsShouldBeFinal</td>
+                </tr>
+                <tr>
+                    <td>AllArgsConstructor</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4189">Link</a></td>
+                    <td>Fixed</td>
+                    <td>AbstractClassWithoutAnyMethod</td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4200">Link</a></td>
+                    <td>Fixed</td>
+                    <td>ClassWithOnlyPrivateConstructorsShouldBeFinal</td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4201">Link</a></td>
+                    <td>Fixed</td>
+                    <td>CommentDefaultAccessModifier</td>
+                </tr>
+                <tr>
+                    <td>Get</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4210">Link</a></td>
+                    <td>Fixed</td>
+                    <td>DoNotUseThreads</td>
+                </tr>
+                <tr>
+                    <td>UtilityClass</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4224">Link</a></td>
+                    <td>Fixed</td>
+                    <td>MissingStaticMethodInNonInstantiatableClass</td>
+                </tr>
+                <tr>
+                    <td>NoArgsConstructor</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4225">Link</a></td>
+                    <td>Fixed</td>
+                    <td>MissingStaticMethodInNonInstantiatableClass</td>
+                </tr>
+                <tr>
+                    <td>EqualsAndHashcode</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4257">Link</a></td>
+                    <td>Confirmed</td>
+                    <td>OverrideBothEqualsAndHashcode</td>
+                </tr>
+                <tr>
+                    <td>Test</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4268">Link</a></td>
+                    <td>Pending</td>
+                    <td>CommentDefaultAccessModifier</td>
+                </tr>
+                <tr>
+                    <td>UtilityClass</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4455">Link</a></td>
+                    <td>Pending</td>
+                    <td>FieldNamingConventions</td>
+                </tr>
+                <tr>
+                    <td>UtilityClass</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4456">Link</a></td>
+                    <td>Pending</td>
+                    <td>FinalFieldCouldBeStatic</td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4458">Link</a></td>
+                    <td>Pending</td>
+                    <td>RedundantFieldInitializer</td>
+                </tr>
+                <tr>
+                    <td>AfterClass</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4477">Link</a></td>
+                    <td>Fixed</td>
+                    <td>SignatureDeclareThrowsException</td>
+                </tr>
+                <tr>
+                    <td>Inject</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4487">Link</a></td>
+                    <td>Fixed</td>
+                    <td>UnnecessaryConstructor</td>
+                </tr>
+                <tr>
+                    <td>Inject</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4493">Link</a></td>
+                    <td>Fixed</td>
+                    <td>MissingStaticMethodInNonInstantiatableClass</td>
+                </tr>
+                <tr>
+                    <td>NonNull</td>
+                    <td><a href="https://github.com/spotbugs/spotbugs/issues/2118">Link</a></td>
+                    <td>Pending</td>
+                    <td>NP_STORE_INTO_NONNULL_FIELD</td>
+                </tr>
+                <tr>
+                    <td>Nullable</td>
+                    <td><a href="https://github.com/spotbugs/spotbugs/issues/2277">Link</a></td>
+                    <td>Pending</td>
+                    <td>NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE</td>
+                </tr>
+                <tr>
+                    <td>Test</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4503">Link</a></td>
+                    <td>Pending</td>
+                    <td>JUnitTestsShouldIncludeAssert</td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4510">Link</a></td>
+                    <td>Pending</td>
+                    <td>ConstructorCallsOverridableMethod</td>
+                </tr>
+                <tr>
+                    <td>Setter</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4527">Link</a></td>
+                    <td>Pending</td>
+                    <td>ImmutableField</td>
+                </tr>
+                <tr>
+                    <td>UtilityClass</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4547">Link</a></td>
+                    <td>Pending</td>
+                    <td>ImmutableField</td>
+                </tr>
+                <tr>
+                    <td>UtilityClass</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4531">Link</a></td>
+                    <td>Pending</td>
+                    <td>MissingStaticMethodInNonInstantiatableClass</td>
+                </tr>
+                <tr>
+                    <td>Autowired</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4141">Link</a></td>
+                    <td>Fixed</td>
+                    <td>UncommentedEmptyConstructor</td>
+                </tr>
+                <tr>
+                    <td>UtilityClass</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4547#issuecomment-1535770050">Link</a></td>
+                    <td>Pending</td>
+                    <td>SingularField</td>
+                </tr>
+                <tr>
+                    <td>UtilityClass</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4547#issuecomment-1535770050">Link</a></td>
+                    <td>Pending</td>
+                    <td>UnusedAssignment</td>
+                </tr>
+            </table>
+            <h2 id="code">Open Source</h2>
+            <ul>
+                <p>
+                    Open-source <a href="https://github.com/annaresearch/sourcecode">[Link]</a>
+                </p>
+            </ul>
+        </td>
+    </table>
+</body>
+
+</html>
