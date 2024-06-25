@@ -1,150 +1,316 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
-    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-        <style>
-        /* hide all pages */
-        .page {
-            display: none;
-        }
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
-        /* display all pages */
-        .active {
-            display: block;
-        }
-    </style>
-    <link rel="stylesheet" href="jemdoc.css" type="text/css">
-    <title>AnnaStudy</title>
+<head>
+    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="jemdoc.css" type="text/css" />
+    <title>AnnaStudy Artifact</title>
 </head>
 
 <body>
     <table summary="Table for page layout." id="tlayout">
-        <tbody><tr><td id="layout-menu">
+        <td id="layout-menu">
             <nav class="navigation">
                 <ul class="navigation-list">
                     <p class="navigation-item">
-                        <a href="#taxonomy">Taxonomy construction</a>
+                        <a class="navigation-link" href="#defects" data-popover>Defects Found</a>
                     </p>
                     <p class="navigation-item">
-                        <a href="#config">Tool Configuration</a>
+                        <a class="navigation-link" href="#issues" data-popover>Analyzed Issues</a>
                     </p>
                     <p class="navigation-item">
-                        <a href="#intro">Introduction</a>
+                        <a class="navigation-link" href="#paper" data-popover>Paper</a>
                     </p>
                     <p class="navigation-item">
-                        <a href="#issues">Analyzed issues</a>
-                    </p>
-                    <p class="navigation-item">
-                        <a href="#defects">Defects found</a>
-                    </p>
-                    <p class="navigation-item">
-                        <a href="#code">Code</a>
-                    </p>
-                    <p class="navigation-item">
-                        <a href="#example">IS Example</a>
+                        <a class="navigation-link" href="#code" data-popover>Code</a>
                     </p>
                 </ul>
             </nav>
         </td>
         <td id="layout-content">
             <div id="toptitle">
-                <h1>AnnaStudy</h1>
+                <h1>Statfier</h1>
             </div>
-            <div id="page1" class="page active">
-                <h2 id="taxonomy">Taxonomy Construction<div></div></h2> <br>
-                <table class="imgtable">
-                    <tbody><tr>
-                        <td align="left">
-                            <h3>Root Cause Taxonomy Construction</h3>
-                            <p>
-                                For root causes, we use the initial taxonomy: type problem[67][83], syntax-based fault[54][83], misconfiguration[54][75], incorrect assignment/initialization[54][67], incorrect exception handling[79][83], incorrect code logic[67], others[54][75][84]. 
-                                During open coding, we found that type problems can be summarized into three type-related operations, so we changed it to erroneous type operation. We also changed the syntax-based fault to the incorrect AST generation, as this is the main indication. Incorrect code logic was adapted to improper AST traversal. 
-                                Besides, we summarized two AIF-related root causes: incomplete semantics and unrecognized equivalent annotations from studied issues. Incorrect assignment/initialization and exception handling are removed as there are no related issues.
-                            </p>
-                            <h3>Fix strategy Taxonomy construction</h3>
-                            <p>
-                                For fix strategies, our initial taxonomy is: fix incorrect API usage[67][84], fix incorrect data type[67], add/fix boundary check[72], fix/add mark variable[72], fix build configuration[67][R1], improve/replace implementation[R2], and others[72]. 
-                                In the coding scheme, there were not only data type problems but also type resolution and conversion.
-                                So, we use fix incorrectly type operation instead. Add/fix boundary check was adapted to fix value check. Improve/fix implementation can be specifically expressed as the redesign rule checker pattern.
-                                We also added three domain-specific fix strategies: fix incorrect use of annotation filter, fix grammar issues, and fix AST node retrieval. The fix/add mark variable and fix build configuration were removed as never used.
-                            </p>
-                            <h3>References</h3>
-                            <p>[R1] Chen, Zhenpeng, et al. "An empirical study on deployment faults of deep learning based mobile applications." 2021 IEEE/ACM 43rd International Conference on Software Engineering (ICSE). IEEE, 2021.</p>
-                            <p>[R2] Thorve, Swapna, Chandani Sreshtha, and Na Meng. "An empirical study of flaky tests in android apps." 2018 IEEE International Conference on Software Maintenance and Evolution (ICSME). IEEE, 2018.</p>
-                        </td>
-                    </tr>
-                </tbody></table>
-            </div>
-            <div id="page2" class="page">
-                <h2 id="config">Soot Configuration</h2> <br>
-                <table class="imgtable">
-                    <tbody><tr>
-                        <td align="left">
-                            We refer to an online tutorial <a href="https://github.com/noidsirius/SootTutorial">[Link]</a> to configure Soot, and the related code is listed below: <br><br>
-                            <pre>
-                                // Soot Configuration Code
-                                G.reset();
-                                Options.v().set_prepend_classpath(true);
-                                Options.v().set_allow_phantom_refs(true);
-                                Options.v().set_keep_line_number(true);
-                                Options.v().set_soot_classpath(targetFolderPath);
-                                Options.v().set_output_format(Options.output_format_jimple);
-                                Options.v().set_process_dir(Collections.singletonList(classFolderPath));
-                                Options.v().set_whole_program(true);
-                                Options.v().set_verbose(true);
-                                Options.v().setPhaseOption("jb", "use-original-names:true");
-                                Scene.v().loadNecessaryClasses();
-                                PackManager.v().runPacks();
-                            </pre>
-                            We also provide configurations of running other static analyzers.
-                            <h2>PMD Configuration</h2>
-                            We use the following code example to illustrate how to invoke PMD related analysis APIs: <br><br>
-                            <pre>
-                                PMDConfiguration config = new PMDConfiguration();
-                                config.setReportFormat("json");
-                                config.setReportFile(REPORT_PATH);
-                                config.addRuleSet(ALL_RULES);
-                                PmdAnalysis analysis = PmdAnalysis.create(config);
-                                analysis.files().addFile(detectionPath);
-                                analysis.performAnalysis();
-                            </pre>
-
-                            <h2>SonarQube Configuration</h2>
-                            We use the following command to run SonarQube:<br><br>
-                            SONAR_SCANNER_PATH -Dsonar.projectKey=SONARQUBE_PROJECT_KEY<br>
-                            -Dsonar.projectBaseDir=YOUR_PROJECT_BASE_PATH<br>
-                            -Dsonar.sources=DETECTION_PATH<br>
-                            -Dsonar.host.url=http://localhost:9000<br>
-                            -Dsonar.login=USERNAME<br>
-                            -Dsonar.password=PASSWORD<br><br>
-                            USERNAME and PASSWORD are initialized when users run first time run SonarQube.
-                            
-                            <h2>SpotBugs Configuration</h2>
-                            We use the following command to run SpotBugs:<br><br>
-                            SPOTBUGS_PATH -textui -xml:withMessages -output REPORT_PATH DETECTION_PATH
-                            
-                            <h2>CheckStyle Configuation</h2>
-                            We use the following command to run CheckStyle:<br><br>
-                            java -jar CHECKSTYLE_PATH -f plain -o REPORT_PATH DETECTION_PATH
-
-                            <h2>Infer Configuration</h2>
-                            We use the following command to run Infer:<br><br>
-                            INFER_PATH run -o REPORT_FOLDER_PATH -- javac -d CLASS_FOLDER_PATH -cp DEPENDENCY_JAR_PATH DETECTION_PATH
-                        </td>
-                    </tr>
-                </tbody></table>
-            </div>
-            <div id="page3" class="page">
-                <h2 id="intro">Introduction</h2>
-                <table class="imgtable">
-                    <tbody><tr>
-                        <td align="left">
-                            We conduct the first comprehensive study of annotation-induced faults on static analyzers. In this work, we collect 246 issues from five popular and analyze their root causes, symptoms, and fix strategies.
-                            <br>
-                            We also implemented a metamorphic testing framework, AnnaTester, to detect usual annotation-induced faults based on our findings. AnnaTester identified 43 faults, 20 of which have been fixed.
-                        </td>
-                    </tr>
-                </tbody></table>
-                <h2 id="issues">Analyzed issues</h2>
+            <table class="imgtable">
+                <tr>
+                    <td>
+                        We conduct the first comprehensive study of annotation-induced faults on static analyzers. In this work, we collect 246 issues from five popular and analyze their root causes, symptoms, and fix strategies.
+We also implemented a metamorphic testing framework, AnnaTester, to detect usual annotation-induced faults based on our findings. AnnaTester identified 43 faults, 20 of which have been fixed.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <h2 id="defects">Defects found</h2>
+            <table>
+                <tbody><tr>
+                    <th align="center">Annotation</th>
+                    <th align="center">Link</th>
+                    <th align="center">Status</th>
+                    <th align="center">Rule</th>
+                </tr>
+                <tr>
+                    <td>NoArgsConstructor</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4188">Link</a></td>
+                    <td>Fixed</td>
+                    <td>ClassWithOnlyPrivateConstructorsShouldBeFinal</td>
+                </tr>
+                <tr>
+                    <td>Cleanup</td>
+                    <td><a href="https://community.sonarsource.com/t/a-false-positive-about-rule-rspec-2095/67536">Link</a></td>
+                    <td>Confirmed</td>
+                    <td>RSPEC-2095</td>
+                </tr>
+                <tr>
+                    <td>NoArgsConstructor</td>
+                    <td><a href="https://community.sonarsource.com/t/two-false-positives-about-the-rule-rspec-2974/78226/5">Link</a></td>
+                    <td>Confirmed</td>
+                    <td>RSPEC-2974</td>
+                </tr>
+                <tr>
+                    <td>AllArgsConstructor</td>
+                    <td><a href="https://community.sonarsource.com/t/two-false-positives-about-the-rule-rspec-2974/78226/5">Link</a></td>
+                    <td>Confirmed</td>
+                    <td>RSPEC-2974</td>
+                </tr>
+                <tr>
+                    <td>DummyAnnotation</td>
+                    <td><a href="https://github.com/checkstyle/checkstyle/issues/13782">Link</a></td>
+                    <td>Confirmed</td>
+                    <td>Indentation</td>
+                </tr>
+                <tr>
+                    <td>AllArgsConstructor</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4189">Link</a></td>
+                    <td>Fixed</td>
+                    <td>AbstractClassWithoutAnyMethod</td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4200">Link</a></td>
+                    <td>Fixed</td>
+                    <td>ClassWithOnlyPrivateConstructorsShouldBeFinal</td>
+                </tr>
+                <tr>
+                    <td>NonNull</td>
+                    <td><a href="https://github.com/spotbugs/spotbugs/issues/2558">Link</a></td>
+                    <td>Pending</td>
+                    <td>NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT</td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4201">Link</a></td>
+                    <td>Fixed</td>
+                    <td>CommentDefaultAccessModifier</td>
+                </tr>
+                <tr>
+                    <td>Get</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4210">Link</a></td>
+                    <td>Fixed</td>
+                    <td>DoNotUseThreads</td>
+                </tr>
+                <tr>
+                    <td>UtilityClass</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4224">Link</a></td>
+                    <td>Fixed</td>
+                    <td>MissingStaticMethodInNonInstantiatableClass</td>
+                </tr>
+                <tr>
+                    <td>Nullable</td>
+                    <td><a href="https://github.com/spotbugs/spotbugs/issues/2557">Link</a></td>
+                    <td>Pending</td>
+                    <td>NP_METHOD_PARAMETER_TIGHTENS_ANNOTATION</td>
+                </tr>
+                <tr>
+                    <td>EqualsAndHashcode</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4257">Link</a></td>
+                    <td>Confirmed</td>
+                    <td>OnlyOneReturn</td>
+                </tr>
+                <tr>
+                    <td>UtilityClass</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4455">Link</a></td>
+                    <td>Fixed</td>
+                    <td>FieldNamingConventions</td>
+                </tr>
+                <tr>
+                    <td>DummyAnnotation</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4152#issue-1405484845">Link</a></td>
+                    <td>Fixed</td>
+                    <td>Parser(Crash)</td>
+                </tr>
+                <tr>
+                    <td>Inject</td>
+                    <td><a href="https://community.sonarsource.com/t/a-false-negative-about-the-rule-rspec-3306/98652">Link</a></td>
+                    <td>Confirmed</td>
+                    <td>RSPEC-3306</td>
+                </tr>
+                <tr>
+                    <td>DummyAnnotation</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4152#issuecomment-1277447394">Link</a></td>
+                    <td>Fixed</td>
+                    <td>Parser(Crash)</td>
+                </tr>
+                <tr>
+                    <td>UtilityClass</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4456">Link</a></td>
+                    <td>Fixed</td>
+                    <td>FinalFieldCouldBeStatic</td>
+                </tr>
+                <tr>
+                    <td>Nullable</td>
+                    <td><a href="https://github.com/spotbugs/spotbugs/issues/2557#issuecomment-1715452757">Link</a></td>
+                    <td>Pending</td>
+                    <td>NP_METHOD_PARAMETER_TIGHTENS_ANNOTATION</td>
+                </tr>
+                <tr>
+                    <td>Setter</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4527">Link</a></td>
+                    <td>Confirmed</td>
+                    <td>ImmutableField</td>
+                </tr>
+                <tr>
+                    <td>UtilityClass</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4547">Link</a></td>
+                    <td>Confirmed</td>
+                    <td>ImmutableField</td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td><a href="https://community.sonarsource.com/t/a-false-positive-about-the-rule-rspec-2974/78223">Link</a></td>
+                    <td>Confirmed</td>
+                    <td>RSPEC-2974</td>
+                </tr>
+                <tr>
+                    <td>Data</td>
+                    <td><a href="https://community.sonarsource.com/t/a-false-positive-about-the-rule-rspec-2974/78223/2">Link</a></td>
+                    <td>Confirmed</td>
+                    <td>RSPEC-2974</td>
+                </tr>
+                <tr>
+                    <td>DummyAnnotation</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4148">Link</a></td>
+                    <td>Fixed</td>
+                    <td>UseArrayListInsteadOfVector</td>
+                </tr>
+                <tr>
+                    <td>NoArgsConstructor</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4225">Link</a></td>
+                    <td>Fixed</td>
+                    <td>MissingStaticMethodInNonInstantiatableClass</td>
+                </tr>
+                <tr>
+                    <td>DummyAnnotation</td>
+                    <td><a href="https://github.com/soot-oss/soot/issues/1999">Link</a></td>
+                    <td>Pending</td>
+                    <td>Parser(Wrong middle result)</td>
+                </tr>
+                <tr>
+                    <td>DummyAnnotation</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4687">Link</a></td>
+                    <td>Pending</td>
+                    <td>UnusedLocalVariable </td>
+                </tr>
+                <tr>
+                    <td>Test</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4268">Link</a></td>
+                    <td>Fixed</td>
+                    <td>CommentDefaultAccessModifier</td>
+                </tr>
+                <tr>
+                    <td>VisibleForTesting</td>
+                    <td><a href="https://github.com/facebook/infer/issues/1793">Link</a></td>
+                    <td>Pending</td>
+                    <td>THREAD_SAFETY_VIOLATION</td>
+                </tr>
+                <tr>
+                    <td>DummyAnnotation</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4152">Link</a></td>
+                    <td>Fixed</td>
+                    <td>Parser(Crash)</td>
+                </tr>
+                <tr>
+                    <td>DummyAnnotation</td>
+                    <td><a href="https://github.com/soot-oss/soot/issues/2000">Link</a></td>
+                    <td>Pending</td>
+                    <td>Parser(Wrong middle result)</td>
+                </tr>
+                <tr>
+                    <td>AfterClass</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4477">Link</a></td>
+                    <td>Fixed</td>
+                    <td>SignatureDeclareThrowsException</td>
+                </tr>
+                <tr>
+                    <td>NonNull</td>
+                    <td><a href="https://github.com/spotbugs/spotbugs/issues/2558#issuecomment-1715474885">Link</a></td>
+                    <td>Pending</td>
+                    <td>NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT</td>
+                </tr>
+                <tr>
+                    <td>Inject</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4487">Link</a></td>
+                    <td>Fixed</td>
+                    <td>UnnecessaryConstructor</td>
+                </tr>
+                <tr>
+                    <td>Inject</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4493">Link</a></td>
+                    <td>Fixed</td>
+                    <td>MissingStaticMethodInNonInstantiatableClass</td>
+                </tr>
+                <tr>
+                    <td>DummyAnnotation</td>
+                    <td><a href="https://github.com/checkstyle/checkstyle/issues/12769">Link</a></td>
+                    <td>Pending</td>
+                    <td>OneStatementPerLine</td>
+                </tr>
+                <tr>
+                    <td>Nullable</td>
+                    <td><a href="https://github.com/facebook/infer/issues/1792">Link</a></td>
+                    <td>Pending</td>
+                    <td>NULL_DEREFERENCE</td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4458">Link</a></td>
+                    <td>Fixed</td>
+                    <td>RedundantFieldInitializer</td>
+                </tr>
+                <tr>
+                    <td>DummyAnnotation</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4688">Link</a></td>
+                    <td>Pending</td>
+                    <td>UnsynchronizedStaticFormatter</td>
+                </tr>
+                <tr>
+                    <td>NonNull</td>
+                    <td><a href="https://github.com/spotbugs/spotbugs/issues/2118">Link</a></td>
+                    <td>Pending</td>
+                    <td>NP_STORE_INTO_NONNULL_FIELD</td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4510">Link</a></td>
+                    <td>Fixed</td>
+                    <td>ConstructorCallsOverridableMethod</td>
+                </tr>
+                <tr>
+                    <td>Nullable</td>
+                    <td><a href="https://github.com/spotbugs/spotbugs/issues/2277">Link</a></td>
+                    <td>Pending</td>
+                    <td>NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE</td>
+                </tr>
+                <tr>
+                    <td>Test</td>
+                    <td><a href="https://github.com/pmd/pmd/issues/4503">Link</a></td>
+                    <td>Fixed</td>
+                    <td>JUnitTestsShouldIncludeAssert</td>
+                </tr>
+            </tbody>
+            </table>
+            <h2 id="issues">Analyzed Issues</h2>
                 <table class="imgtable">
                     <tbody><tr>
                         <td align="left">
@@ -153,357 +319,20 @@
                         </td>
                     </tr>
                 </tbody></table>
-                <h2 id="defects">Defects found</h2>
-                <table>
-                    <tbody><tr>
-                        <th align="center">Annotation</th>
-                        <th align="center">Link</th>
-                        <th align="center">Status</th>
-                        <th align="center">Rule</th>
-                    </tr>
-                    <tr>
-                        <td>NoArgsConstructor</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4188">Link</a></td>
-                        <td>Fixed</td>
-                        <td>ClassWithOnlyPrivateConstructorsShouldBeFinal</td>
-                    </tr>
-                    <tr>
-                        <td>Cleanup</td>
-                        <td><a href="https://community.sonarsource.com/t/a-false-positive-about-rule-rspec-2095/67536">Link</a></td>
-                        <td>Confirmed</td>
-                        <td>RSPEC-2095</td>
-                    </tr>
-                    <tr>
-                        <td>NoArgsConstructor</td>
-                        <td><a href="https://community.sonarsource.com/t/two-false-positives-about-the-rule-rspec-2974/78226/5">Link</a></td>
-                        <td>Confirmed</td>
-                        <td>RSPEC-2974</td>
-                    </tr>
-                    <tr>
-                        <td>AllArgsConstructor</td>
-                        <td><a href="https://community.sonarsource.com/t/two-false-positives-about-the-rule-rspec-2974/78226/5">Link</a></td>
-                        <td>Confirmed</td>
-                        <td>RSPEC-2974</td>
-                    </tr>
-                    <tr>
-                        <td>DummyAnnotation</td>
-                        <td><a href="https://github.com/checkstyle/checkstyle/issues/13782">Link</a></td>
-                        <td>Confirmed</td>
-                        <td>Indentation</td>
-                    </tr>
-                    <tr>
-                        <td>AllArgsConstructor</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4189">Link</a></td>
-                        <td>Fixed</td>
-                        <td>AbstractClassWithoutAnyMethod</td>
-                    </tr>
-                    <tr>
-                        <td>Value</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4200">Link</a></td>
-                        <td>Fixed</td>
-                        <td>ClassWithOnlyPrivateConstructorsShouldBeFinal</td>
-                    </tr>
-                    <tr>
-                        <td>NonNull</td>
-                        <td><a href="https://github.com/spotbugs/spotbugs/issues/2558">Link</a></td>
-                        <td>Pending</td>
-                        <td>NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT</td>
-                    </tr>
-                    <tr>
-                        <td>Value</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4201">Link</a></td>
-                        <td>Fixed</td>
-                        <td>CommentDefaultAccessModifier</td>
-                    </tr>
-                    <tr>
-                        <td>Get</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4210">Link</a></td>
-                        <td>Fixed</td>
-                        <td>DoNotUseThreads</td>
-                    </tr>
-                    <tr>
-                        <td>UtilityClass</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4224">Link</a></td>
-                        <td>Fixed</td>
-                        <td>MissingStaticMethodInNonInstantiatableClass</td>
-                    </tr>
-                    <tr>
-                        <td>Nullable</td>
-                        <td><a href="https://github.com/spotbugs/spotbugs/issues/2557">Link</a></td>
-                        <td>Pending</td>
-                        <td>NP_METHOD_PARAMETER_TIGHTENS_ANNOTATION</td>
-                    </tr>
-                    <tr>
-                        <td>EqualsAndHashcode</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4257">Link</a></td>
-                        <td>Confirmed</td>
-                        <td>OnlyOneReturn</td>
-                    </tr>
-                    <tr>
-                        <td>UtilityClass</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4455">Link</a></td>
-                        <td>Fixed</td>
-                        <td>FieldNamingConventions</td>
-                    </tr>
-                    <tr>
-                        <td>DummyAnnotation</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4152#issue-1405484845">Link</a></td>
-                        <td>Fixed</td>
-                        <td>Parser(Crash)</td>
-                    </tr>
-                    <tr>
-                        <td>Inject</td>
-                        <td><a href="https://community.sonarsource.com/t/a-false-negative-about-the-rule-rspec-3306/98652">Link</a></td>
-                        <td>Confirmed</td>
-                        <td>RSPEC-3306</td>
-                    </tr>
-                    <tr>
-                        <td>DummyAnnotation</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4152#issuecomment-1277447394">Link</a></td>
-                        <td>Fixed</td>
-                        <td>Parser(Crash)</td>
-                    </tr>
-                    <tr>
-                        <td>UtilityClass</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4456">Link</a></td>
-                        <td>Fixed</td>
-                        <td>FinalFieldCouldBeStatic</td>
-                    </tr>
-                    <tr>
-                        <td>Nullable</td>
-                        <td><a href="https://github.com/spotbugs/spotbugs/issues/2557#issuecomment-1715452757">Link</a></td>
-                        <td>Pending</td>
-                        <td>NP_METHOD_PARAMETER_TIGHTENS_ANNOTATION</td>
-                    </tr>
-                    <tr>
-                        <td>Setter</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4527">Link</a></td>
-                        <td>Confirmed</td>
-                        <td>ImmutableField</td>
-                    </tr>
-                    <tr>
-                        <td>UtilityClass</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4547">Link</a></td>
-                        <td>Confirmed</td>
-                        <td>ImmutableField</td>
-                    </tr>
-                    <tr>
-                        <td>Value</td>
-                        <td><a href="https://community.sonarsource.com/t/a-false-positive-about-the-rule-rspec-2974/78223">Link</a></td>
-                        <td>Confirmed</td>
-                        <td>RSPEC-2974</td>
-                    </tr>
-                    <tr>
-                        <td>Data</td>
-                        <td><a href="https://community.sonarsource.com/t/a-false-positive-about-the-rule-rspec-2974/78223/2">Link</a></td>
-                        <td>Confirmed</td>
-                        <td>RSPEC-2974</td>
-                    </tr>
-                    <tr>
-                        <td>DummyAnnotation</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4148">Link</a></td>
-                        <td>Fixed</td>
-                        <td>UseArrayListInsteadOfVector</td>
-                    </tr>
-                    <tr>
-                        <td>NoArgsConstructor</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4225">Link</a></td>
-                        <td>Fixed</td>
-                        <td>MissingStaticMethodInNonInstantiatableClass</td>
-                    </tr>
-                    <tr>
-                        <td>DummyAnnotation</td>
-                        <td><a href="https://github.com/soot-oss/soot/issues/1999">Link</a></td>
-                        <td>Pending</td>
-                        <td>Parser(Wrong middle result)</td>
-                    </tr>
-                    <tr>
-                        <td>DummyAnnotation</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4687">Link</a></td>
-                        <td>Pending</td>
-                        <td>UnusedLocalVariable </td>
-                    </tr>
-                    <tr>
-                        <td>Test</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4268">Link</a></td>
-                        <td>Fixed</td>
-                        <td>CommentDefaultAccessModifier</td>
-                    </tr>
-                    <tr>
-                        <td>VisibleForTesting</td>
-                        <td><a href="https://github.com/facebook/infer/issues/1793">Link</a></td>
-                        <td>Pending</td>
-                        <td>THREAD_SAFETY_VIOLATION</td>
-                    </tr>
-                    <tr>
-                        <td>DummyAnnotation</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4152">Link</a></td>
-                        <td>Fixed</td>
-                        <td>Parser(Crash)</td>
-                    </tr>
-                    <tr>
-                        <td>DummyAnnotation</td>
-                        <td><a href="https://github.com/soot-oss/soot/issues/2000">Link</a></td>
-                        <td>Pending</td>
-                        <td>Parser(Wrong middle result)</td>
-                    </tr>
-                    <tr>
-                        <td>AfterClass</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4477">Link</a></td>
-                        <td>Fixed</td>
-                        <td>SignatureDeclareThrowsException</td>
-                    </tr>
-                    <tr>
-                        <td>NonNull</td>
-                        <td><a href="https://github.com/spotbugs/spotbugs/issues/2558#issuecomment-1715474885">Link</a></td>
-                        <td>Pending</td>
-                        <td>NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT</td>
-                    </tr>
-                    <tr>
-                        <td>Inject</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4487">Link</a></td>
-                        <td>Fixed</td>
-                        <td>UnnecessaryConstructor</td>
-                    </tr>
-                    <tr>
-                        <td>Inject</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4493">Link</a></td>
-                        <td>Fixed</td>
-                        <td>MissingStaticMethodInNonInstantiatableClass</td>
-                    </tr>
-                    <tr>
-                        <td>DummyAnnotation</td>
-                        <td><a href="https://github.com/checkstyle/checkstyle/issues/12769">Link</a></td>
-                        <td>Pending</td>
-                        <td>OneStatementPerLine</td>
-                    </tr>
-                    <tr>
-                        <td>Nullable</td>
-                        <td><a href="https://github.com/facebook/infer/issues/1792">Link</a></td>
-                        <td>Pending</td>
-                        <td>NULL_DEREFERENCE</td>
-                    </tr>
-                    <tr>
-                        <td>Value</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4458">Link</a></td>
-                        <td>Fixed</td>
-                        <td>RedundantFieldInitializer</td>
-                    </tr>
-                    <tr>
-                        <td>DummyAnnotation</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4688">Link</a></td>
-                        <td>Pending</td>
-                        <td>UnsynchronizedStaticFormatter</td>
-                    </tr>
-                    <tr>
-                        <td>NonNull</td>
-                        <td><a href="https://github.com/spotbugs/spotbugs/issues/2118">Link</a></td>
-                        <td>Pending</td>
-                        <td>NP_STORE_INTO_NONNULL_FIELD</td>
-                    </tr>
-                    <tr>
-                        <td>Value</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4510">Link</a></td>
-                        <td>Fixed</td>
-                        <td>ConstructorCallsOverridableMethod</td>
-                    </tr>
-                    <tr>
-                        <td>Nullable</td>
-                        <td><a href="https://github.com/spotbugs/spotbugs/issues/2277">Link</a></td>
-                        <td>Pending</td>
-                        <td>NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE</td>
-                    </tr>
-                    <tr>
-                        <td>Test</td>
-                        <td><a href="https://github.com/pmd/pmd/issues/4503">Link</a></td>
-                        <td>Fixed</td>
-                        <td>JUnitTestsShouldIncludeAssert</td>
-                    </tr>
-                </tbody>
-            </table>
+            <h2 id="paper">Paper</h2>
+            <ul>
+                <p>
+                    Please refer to the author's homepage to check the camera-ready paper: <a href="https://huaien.site/">[Link]</a>
+                </p>
+            </ul>
             <h2 id="code">Open Source</h2>
             <ul>
                 <p>
-                    Open-source <a href="https://anonymous.4open.science/r/SCode-C841/README.md">[Link]</a>
+                    Open-source <a href="https://github.com/cshezhang/AnnaTester">[Link]</a>
                 </p>
             </ul>
-        </div>
-
-        <div id="page4" class="page">
-
-            <h2 id="example">An Incomplete Semanitcs Example</h2>
-            <table class="imgtable">
-                <tbody><tr>
-                    <td align="left">
-                        In the following code example from a SonarQube issue <a href="https://sonarsource.atlassian.net/browse/SONARJAVA-3612">(Link)</a>, when a class is annotated @Transactional, overriding the method and just calling super is useful, as it will make the method transactional. <br><br>
-                        The SonarQube rule S1185 <a href="https://rules.sonarsource.com/java/RSPEC-1185/">(Link)</a> can report a warning when overriding methods only call the same method in the superclass simply. <br><br>
-                        Hence, SonarQube does not consider the semantics of annotation @Transactional completely, leading to a false positive. <br><br>
-                        The developers of SonarQube have labeled this issue as "major" and fixed it. <br><br>
-                        <pre>                        @Transactional
-                        public class MyClass extends BaseClass {
-                            // Sonar Rule S1185 is thrown here although it makes sense to
-                            // implement this method because i want it to be transactional
-                            @Override
-                            public void test() { 
-                                super.test();
-                            }
-                        }
-                        </pre>
-                        <div style="left: 100px; position: absolute; left: 400px;">
-                            <h3>An Incomplete Semantics Example from SonarQube</h3>
-                        </div>
-                        
-                    </td>
-                </tr>
-            </tbody></table>
-        </div>
         </td>
-    </tr></tbody></table>
+    </table>
+</body>
 
-    <script>
-
-        window.addEventListener('hashchange', function() {
-            var targetPageId = window.location.hash.substring(1);
-            if (targetPageId=='taxonomy') {
-                var targetPage = document.getElementById('page1');
-            }
-            else if (targetPageId=='config') {
-                var targetPage = document.getElementById('page2');
-            }
-            else if (targetPageId=='intro') {
-                var targetPage = document.getElementById('page3');
-            }
-            else if (targetPageId=='issues') {
-                var targetPage = document.getElementById('page3');
-            }
-            else if (targetPageId=='defects') {
-                var targetPage = document.getElementById('page3');
-            }
-            else if (targetPageId=='code') {
-                var targetPage = document.getElementById('page3');
-            }
-            else if (targetPageId=='example') {
-                var targetPage = document.getElementById('page4');
-            }
-            else{
-                var targetPage = document.getElementById('page1');
-            }
-            // var targetPage = document.getElementById(targetPageId);
-    
-
-            var pages = document.querySelectorAll('.page');
-            pages.forEach(function(page) {
-                page.classList.remove('active');
-            });
-    
- 
-            if (targetPage) {
-                targetPage.classList.add('active');
-            }
-        });
-    
-
-        window.dispatchEvent(new Event('hashchange'));
-    </script>
-
-</body></html>
+</html>
